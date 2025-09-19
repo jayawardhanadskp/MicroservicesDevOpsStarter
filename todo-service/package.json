@@ -1,5 +1,5 @@
 {
-  "name": "microservices-devops-starter",
+  "name": "todo-service",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
