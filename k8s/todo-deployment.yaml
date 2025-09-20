@@ -11,16 +11,16 @@ spec:
     metadata:
       labels:
         app: todo
-  spec:
-    containers:
-    - name: todo
-    image: kasunpradeepds/todo-service
-    ports:
-    - containerPort: 5000
-    resources:
-      requests:
-        memory: "128Mi"
-        cpu: "100m"
-      limits:
-          memory: "256Mi"
-          cpu: "500m"
+    spec:
+      containers:
+        - name: todo
+          image: kasunpradeepds/todo-service
+          ports:
+            - containerPort: 5000
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
