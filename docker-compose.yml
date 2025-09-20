@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+  auth: 
+    build: ./auth-service
+    ports: 
+      - "4000:4000"
+    networks:
+      - appnet
+
+  todo:
+    build: ./todo-service
+    ports:
+      - "5500:5000"
+    depends_on:
+      - auth
+    networks:
+      - appnet
+
+  notification:
+    build: ./notification-service
+    ports:
+      - "6000:6000"
+    networks:
+      - appnet
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - todo
+    networks:
+      - appnet
+
+
+networks:
+  appnet:
+    driver: bridge
